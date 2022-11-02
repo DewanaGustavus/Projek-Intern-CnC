@@ -14,7 +14,9 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.3em}
 \renewcommand{\headrulewidth}{0pt}
+
 \rfoot{\thepage}
+
 \fancyfoot[CE,CO]{\thepage}
 \lstset{
     basicstyle=\ttfamily\small,
@@ -36,10 +38,19 @@
 }
 
 \begin{document}
-\section*{Problem X - Judul Problem}
-\textit{Author: Budi Setiawan}
-\\
-\textit{Expected Difficulty: Easy/Easy-Medium/Medium/Medium-Hard/Hard}
+
+\begin{center}
+    \section*{Judul Problem} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & Xs \\    % jangan lupa ganti time limit
+        Batas Memori & XMB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
 
 Contoh memformat teks: \textbf{bold}, \textit{italic}, \underline{underline}, $x$.
 
@@ -64,4 +75,36 @@ Contoh membuat persamaan:
     % Contoh gambar:
     % \includegraphics[width=300px]{image-1}
 \end{center}
+
+\subsection*{Format Masukan}
+
+Baris pertama terdiri dari satu bilangan bulat positif $T$ ($1 \leq T \leq 100.000$), menyatakan banyaknya kasus uji.
+Tiap kasus uji diawali dengan bilangan $N$ ($1 \leq N \leq 100.000$).
+$N$ baris berikutnya terdiri dari 3 bilangan, dengan baris ke-$i$ menyatakan bilangan $A_i$, $B_i$, dan $C_i$.
+
+\subsection*{Format Keluaran}
+
+Untuk tiap kasus uji, tuliskan $N$ baris, dengan baris ke-$i$ menyatakn jumlah $A_i + B_i + C_i$.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+3
+1 2 3
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+-6
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+ Jika dibutuhkan, tambahkan penjelasan di sini
+
+\pagebreak
+
 \end{document}
