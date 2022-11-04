@@ -1,0 +1,2 @@
+bash
+./generate-problem.sh <Kode Soal> <Nama Folder> "<Nama Soal>" <Time Limit (sec)> <Memory Limit (MB)>
