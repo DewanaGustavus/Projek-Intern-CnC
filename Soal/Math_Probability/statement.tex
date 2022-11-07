@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=10mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+
+\rfoot{\thepage}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{\textbf{CnC Intern Contest}}
+\pagenumbering{gobble}
+
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+
+    
+    \section*{Poker} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 2s \\    % jangan lupa ganti time limit
+        Batas Memori & 1024MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+Terdapat kartu sebanyak 9$K$ ($2 \leq t_i \leq 10^5$), untuk setiap $i$ = 1,2,..,9 terdapat K buah kartu yang tertulis $i$. Kita kemudian mengacak kartu tersebut dan memberikan 5 kartu kepada masing-masing Takahashi dan Aoki, 1 kartu dalam kondisi terbalik dan 4 sisanya tidak. Carilah kemungkinan dimana Takahashi menang, Takahashi menang jika kartu yang dia pegang bernilai lebih besar daripada kartu yang dipegang Aoki.
+\\
+\\
+Kita dapat mendefinisikan nilai dari 5 kartu yang dipegang dengan:
+$\displaystyle\sum_{i=1}^9i10^{c_i}$, dimana $c_i$ adalah jumlah kartu yang memiliki tulisan i.
+\subsection*{Format Masukan}
+Input berupa integer K dan sepasang string. K melambangkan jumlah kartu yang tertulis $i$. String S melambangkan kartu Takahashi dan string T melambangkan kartu Aoki. S dan T masing-masing adalah string yang terdiri dari 5 karakter. Karakter terakhir stringnya dilambangkan dengan '#' yang melambangkan kartu yang terbalik.
+
+\subsection*{Format Keluaran}
+Tuliskan kemungkinan dimana Takahashi menang.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+2
+1144#
+2233#
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+0.4444444444444444
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+Jawaban akan terhitung benar jika jawaban tepat atau relatif errornya paling besar adalah $10^-5$
+
+\pagebreak
+
+\end{document}
