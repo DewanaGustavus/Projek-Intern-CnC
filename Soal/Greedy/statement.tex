@@ -67,16 +67,28 @@ Buatlah sebuah algoritma yang dapat menentukan jumlah langkah minimal pemindahan
 \\
 
 \begin{multicols}{2}
-\subsection*{Contoh Masukan}
+\subsection*{Contoh Masukan 1}
 \begin{lstlisting}
 ....x..xx...x..
-........xxxxxxx.xxxxxx.......x..
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
 
 5
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+........xxxxxxx.xxxxxx.......x..
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+
 14
 \end{lstlisting}
 \vfill
@@ -84,7 +96,7 @@ Buatlah sebuah algoritma yang dapat menentukan jumlah langkah minimal pemindahan
 \end{multicols}
 
 \subsection*{Penjelasan}
- 
+Pada contoh masukan pertama, masukan berupa "....x..xx...x..". Sehingga dengan menggunakan greedy algorithm maka akan didapat jumlah langkah paling minimal adalah 5, dengan susunannya yang berupa "......xxxx.....". Bisa saja terdapat lebih dari satu kemungkinan susunan untuk beberapa masukan.
 
 \pagebreak
 
