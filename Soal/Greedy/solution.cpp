@@ -5,7 +5,6 @@ int main() {
     std::string inp;
     int i, sum, currentx, currentxgroup;
     long long stepsum;
-    int mod = 10000003;
     cin >> inp;
 
     int length = inp.size(); // panjang string
