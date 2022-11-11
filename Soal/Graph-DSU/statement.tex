@@ -1,0 +1,134 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=10mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+
+\rfoot{\thepage}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{\textbf{CnC Intern Contest}}
+\pagenumbering{gobble}
+
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+
+    
+    \section*{Mencari Teman} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+Seorang CEO agensi Vtuber terkenal yaitu gooya meminta pertolongan anda, belakangan ini terdapat rumor bahwa apabila karyawan di sebuah perusahaan memiliki banyak teman maka perusahaan tersebut akan lebih sukses dibanding dengan perusahaan yang karyawannya memiliki sedikit teman, namun talent yang dimiliki gooya cenderung anti-sosial sehingga mereka hanya memiliki sedikit teman saja, karena tidak ingin perusahaannya kalah gooya ingin membuat sebuah acara untuk membuat talent perusahaannya memiliki banyak teman, agar acara yang dibuat berjalan secara efektif gooya ingin mengetahui berapa banyak pasangan pertemanan baru yang dapat terjadi, bantu gooya untuk menentukan berapa banyak pasangan pertemanan baru yang dapat terjadi.\\
+\\
+Beberapa aturan tambahan untuk perrtemanan:
+\begin{itemize}
+    \setlength\itemsep{0pt}
+    \item jika A berteman dengan B, maka B juga berteman dengan A.
+    \item jika A berteman dengan B dan B berteman dengan C, maka A juga berteman dengan C.
+    \item pada jawaban jika sudah menemukan pasangan pertemanan baru (A, B) pasangan itu hanya dihitung saja tidak benar-benar membentuk pertemanan yang baru.
+\end{itemize}
+
+\subsection*{Format Masukan}
+
+Baris pertama terdiri dari dua bilangan bulat positif $N$ dan $M$ ($2 \leq N \leq 100.000,  1 \leq M \leq 10.0000$), menyatakan banyaknya orang yang ada pada perusahaan halulive dan banyaknya pasangan pertemanan yang sudah terjadi.
+untuk $N$ baris selanjutnya terdiri dari 2 nama $A$ dan $B$ ($1 \leq |A|,|B| \leq 10$) yang menyatakan $A$ sudah berteman dengan $B$, nama seseorang hanya terdiri atas alphabet latin kecil.
+
+\subsection*{Format Keluaran}
+
+Tuliskan $K$ yaitu banyaknya pasangan pertemanan baru yang dapat terjadi.
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 1}
+\begin{lstlisting}
+5 3
+gura ame
+calli gura
+ina kiara
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran 1}
+\begin{lstlisting}
+6
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+4 1
+botan lamy
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran 2}
+\begin{lstlisting}
+5
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+pada testcase pertama banyak pasangan pertemanan baru yang dapat terjadi adalah 6 pasangan yaitu :
+\begin{enumerate}
+    \item (gura, ina)
+    \item (gura, kiara)
+    \item (ame, ina)
+    \item (ame, kiara)
+    \item (calli, ina)
+    \item (calli, kiara)
+\end{enumerate}
+disini (ame, calli) bukan pasangan pertemanan baru karena ame berteman dengan gura dan gura berteman dengan calli jadi ame sudah menjadi teman calli.\\
+\\
+pada testcase kedua misal orang yang tersedia adalah botan, lamy, nene, dan polka maka banyak pasangan pertemanan baru adalah :
+\begin{enumerate}
+    \item (botan, nene)
+    \item (botan, polka)
+    \item (lamy, nene)
+    \item (lamy, polka)
+    \item (nene, polka)
+\end{enumerate}
+
+\pagebreak
+
+\end{document}
