@@ -36,8 +36,5 @@ int main() {
         dp.push_back(val + m);
     }
 
-    for (auto x : dp) {
-        cout << x << " ";
-    }
-    cout << endl;
+    cout << dp[n - 1] << endl;
 }
