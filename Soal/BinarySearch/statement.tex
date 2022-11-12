@@ -74,7 +74,8 @@ Dipastikan akan ada bilangan x yang memenuhi $f(x)$ pada setiap kasus uji
 
 \subsection*{Format Keluaran}
 
-Untuk tiap kasus uji, tuliskan $T$ baris, dengan baris ke-$i$ menyatakan nilai x yang memenuhi $f(x)$ teresbut
+Untuk tiap kasus uji, tuliskan $T$ baris, dengan baris ke-$i$ menyatakan nilai x yang memenuhi $f(x)$ tersebut.
+Output bilangan bulat positif x yang memenuhi $f(x)$, dan dapat dipastikan hanya ada satu jawaban x yang memenuhi.  
 \\
 
 \begin{multicols}{2}
@@ -92,6 +93,12 @@ Untuk tiap kasus uji, tuliskan $T$ baris, dengan baris ke-$i$ menyatakan nilai x
 12 23 34 0 0
 \end{lstlisting}
 
+\subsection*{Contoh Masukan 2}
+\begin{lstlisting}
+1
+0 1 0 1 2
+\end{lstlisting}
+
 \columnbreak
 \subsection*{Contoh Keluaran 1}
 \begin{lstlisting}
@@ -104,6 +111,11 @@ Untuk tiap kasus uji, tuliskan $T$ baris, dengan baris ke-$i$ menyatakan nilai x
 3
 0
 \end{lstlisting}
+
+\subsection*{Contoh Keluaran 3}
+\begin{lstlisting}
+1
+\end{lstlisting}
 \end{multicols}
 
 
@@ -112,6 +124,8 @@ Pada test case pertama, fungsinya menjadi \(f(x) = 1x^3 + 2x^2 + 3x + 5\). Kita 
 \[27 = 1x^3 + 2x^2 + 3x + 5\]
 
 Nilai x yang memenuhi adalah 2
+
+Pada test case ketiga, ada 2 nilai x yang memenuhi yaitu 1 dan -1, tetapi karena jawaban yang diterima hanya bilangan bulat postif maka jawabannya adalah 1
 
 
 \pagebreak
