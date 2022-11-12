@@ -36,5 +36,8 @@ int main() {
         dp.push_back(val + m);
     }
 
-    cout << dp[n - 1] << endl;
+    int maks = 0;
+    for (int x : dp) maks = max(x, maks);
+
+    cout << maks << endl;
 }
