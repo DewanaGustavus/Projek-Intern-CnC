@@ -11,7 +11,7 @@ protected:
     vector<vector<int>> edges;
     vector<vector<int>> queries;
 
-    int ans;
+    long long ans;
     void InputFormat() {
         LINE(N, M);
         LINES(edges) % SIZE(N-1);
@@ -30,18 +30,39 @@ protected:
     void Constraints() {
         CONS(1 < N && N <= NMAX);
         CONS(1 <= M && M <= NMAX);
-        //CONS(EdgesCons(edges));
-        //CONS(QueriesCons(queries));
+        CONS(EdgesCons(edges));
+        CONS(QueriesCons(queries));
     }
 private:
+    vector<bool> vis;
+    int cnt;
+    bool poss;
+    vector<vector<int>> adj;
+    void dfs(int pos, int prev) {
+        if(vis[pos]) return;
+        vis[pos] = 1;
+        cnt++;
+        for(int &nxt: adj[pos]) {
+            if(nxt == prev) continue;
+            if(vis[nxt]) poss = 0;
+            dfs(nxt, pos);
+        }
+    }
     bool EdgesCons(vector<vector<int>> &edges) {
         if(edges.size() + 1 != N) return false;
+        cnt = 0;
+        poss = 1;
+        vis = vector<bool>(N+1, false);
+        adj = vector<vector<int>>(N+1, vector<int>(0));
         for(vector<int> &x: edges) {
             if(! (1 <= x[0] && x[0] <= N && 1 <= x[1] && x[1] <= N) ) return false;
             if(x[0] == x[1]) return false;
+            adj[x[0]].push_back(x[1]);
+            adj[x[1]].push_back(x[0]);
         }
-        // TODO : CHECK IF TREE/NOT
-        return true;
+        dfs(1, -1);
+        if(cnt < N) poss = 0;
+        return poss;
     }
     bool QueriesCons(vector<vector<int>> &queries) {
         if(queries.size() != M) return false;
@@ -63,18 +84,17 @@ class TestSpec : public BaseTestSpec<ProblemSpec> {
 protected:
     void SampleTestCase1() {
         Input({
-            "5 4",
+            "3 5",
             "1 2",
-            "2 3",
-            "2 4",
-            "4 5",
+            "1 3",
             "2 1",
-            "2 5",
+            "2 2",
+            "2 3",
             "1 2",
-            "2 5"
+            "2 3"
         });
         Output({
-            "6"
+            "4"
         });
     }
 
@@ -85,7 +105,9 @@ protected:
 
     void TestCases(){
         for(int i = 0; i < 5; i++) CASE(N = 100, M = 200, randomTC(N, M, 2, edges, queries));
-        //for(int i = 0; i < 5; i++) CASE(N = 1e5, M = 1e5, randomTC(N, M, 4, edges, queries));
+        for(int i = 0; i < 5; i++) CASE(N = 1000, M = 2000, randomTC(N, M, 100, edges, queries));
+        for(int i = 0; i < 5; i++) CASE(N = 1000, M = 2000, randomTC(N, M, 3, edges, queries));
+        for(int i = 0; i < 5; i++) CASE(N = 1e5, M = 1e5, randomTC(N, M, 4, edges, queries));
     }
 
 private:
