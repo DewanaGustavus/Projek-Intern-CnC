@@ -46,7 +46,7 @@
 \begin{center}
 
     
-    \section*{Xenia dan Tree} % ganti judul soal
+    \section*{Supir Truk Serakah} % ganti judul soal
 
     \begin{tabular}{ | c c | }
         \hline
@@ -57,41 +57,38 @@
 \end{center}
 
 \subsection*{Deskripsi}
-Xenia adalah seorang programmer yang mempunyai tree yang terdiri dari $n$ node. Node-node dari tree tersebut indexnya adalah 1 sampai $n$, dan node pertama diwarnai dengan warna merah dan sisanya diwarnai dengan warna biru. Jarak antara dua node $v$ dan $u$ adalah banyak edge pada path yang terpendek antara $u$ dan $v$.
-Xenia harus mencari cara tercepat untuk mengeksekusi dua tipe query berikut:
-\begin{enumerate}
-    \setlength\itemsep{0pt}
-    \item Mewarnai node berwarna biru tertentu dengan warna merah.
-    \item Menentukan node merah dengan distance terdekat dari node merah tertentu dan menuliskan ke layar jarak terpendek dari node berwarna merah terdekat.
-\end{enumerate}
+Loid adalah seorang supir truk yang serakah, dia selalu memilih lokasi terjauh agar bayaran yang diterimanya semakin besar. Terdapat N kota dimana Loid ditugaskan dimana terdapat N-1 jalan ke kota-kota lainnya sehingga membentuk sebuah tree. Kota-kota tersebut dinomori dari 1 sammpai N, dengan kota 1 yang sudah mempunyai supplier bahan makanan. \\
+Terdapat 2 query yang harus dipenuhi:
+
+\\ 1 x : mendirikan supplier bahan makanan di node x
+\\ 2 x : toko bahan makanan di x perlu stok bahan makanan, sehingga carilah jarak supplier makanan terjauh
+
+
 \subsection*{Format Masukan}
 Baris pertama  input berisi 2 integer $n$ dan $m$ ($2 \leq n \leq 10^5$, $1 \leq m \leq 10^5$), masing-masing adalah jumlah node dari tree dan jumlah query dari tree. Baris n-1 berikutnya berisi edge dari tree tersebut, baris ke-i berisi 2 integer yaitu $a_i$ dan $b_i$ ($1 \leq a_i, b_i \leq n, a_i \neq b_i$) yang merupakan edge dari tree tersebut.
 \\
 \\
-m baris berikutnya berisi query. Setiap query berisi sepasang integer yaitu $t_i$ dan $v_i$ ($1 \leq t_i \leq 2$, $1 \leq v_i \leq n$). Jika $t_i$ = 1, maka program harus mewarnai node $v_i$ yang berwarna biru dengan warna merah. Jika $t_i$ = 2, maka program harus menuliskan jarak terdekat dari node warna merah ke node $v_i$.
+m baris berikutnya berisi query. Setiap query berisi sepasang integer yaitu $t_i$ dan $v_i$ ($1 \leq t_i \leq 2$, $1 \leq v_i \leq n$). Jika $t_i$ = 1, maka program harus mendirikan supplier bahan makanan di node $v_i$. Jika $t_i$ = 2, maka program harus mencari jarak supplier bahan makanan terjauh dari node $v_i$.
 \subsection*{Format Keluaran}
-Untuk setiap query yang tipe ke-2, tuliskan outputnya dalam satu baris
+Tuliskan satu baris yang berisi total seluruh query 2, jika tidak ada query 2 maka tulis 0
 \\
 
 \begin{multicols}{2}
 \subsection*{Contoh Masukan}
 \begin{lstlisting}
-5 4
+3 5
+1 2
+1 3
+2 1
+2 2
+2 3
 1 2
 2 3
-2 4
-4 5
-2 1
-2 5
-1 2
-2 5
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
-0
-3
-2
+4
 \end{lstlisting}
 \vfill
 \null
