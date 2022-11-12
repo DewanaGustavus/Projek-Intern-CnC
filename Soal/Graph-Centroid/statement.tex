@@ -60,15 +60,15 @@
 Loid adalah seorang supir truk yang serakah, dia selalu memilih lokasi terjauh agar bayaran yang diterimanya semakin besar. Terdapat N kota dimana Loid ditugaskan dimana terdapat N-1 jalan ke kota-kota lainnya sehingga membentuk sebuah tree. Kota-kota tersebut dinomori dari 1 sammpai N, dengan kota 1 yang sudah mempunyai supplier bahan makanan. \\
 Terdapat 2 query yang harus dipenuhi:
 
-\\ 1 x : mendirikan supplier bahan makanan di node x
+\\ 1 x : mendirikan supplier bahan makanan di kota x
 \\ 2 x : toko bahan makanan di x perlu stok bahan makanan, sehingga carilah jarak supplier makanan terjauh
 
 
 \subsection*{Format Masukan}
-Baris pertama  input berisi 2 integer $n$ dan $m$ ($2 \leq n \leq 10^5$, $1 \leq m \leq 10^5$), masing-masing adalah jumlah node dari tree dan jumlah query dari tree. Baris n-1 berikutnya berisi edge dari tree tersebut, baris ke-i berisi 2 integer yaitu $a_i$ dan $b_i$ ($1 \leq a_i, b_i \leq n, a_i \neq b_i$) yang merupakan edge dari tree tersebut.
+Baris pertama  input berisi 2 integer $n$ dan $m$ ($2 \leq n \leq 10^5$, $1 \leq m \leq 10^5$), masing-masing adalah jumlah kota dari tree dan jumlah query dari tree. Baris n-1 berikutnya berisi edge dari tree tersebut, baris ke-i berisi 2 integer yaitu $a_i$ dan $b_i$ ($1 \leq a_i, b_i \leq n, a_i \neq b_i$) yang merupakan edge dari tree tersebut.
 \\
 \\
-m baris berikutnya berisi query. Setiap query berisi sepasang integer yaitu $t_i$ dan $v_i$ ($1 \leq t_i \leq 2$, $1 \leq v_i \leq n$). Jika $t_i$ = 1, maka program harus mendirikan supplier bahan makanan di node $v_i$. Jika $t_i$ = 2, maka program harus mencari jarak supplier bahan makanan terjauh dari node $v_i$.
+m baris berikutnya berisi query. Setiap query berisi sepasang integer yaitu $t_i$ dan $v_i$ ($1 \leq t_i \leq 2$, $1 \leq v_i \leq n$). Jika $t_i$ = 1, maka program harus mendirikan supplier bahan makanan di kota $v_i$. Jika $t_i$ = 2, maka program harus mencari jarak supplier bahan makanan terjauh dari kota $v_i$.
 \subsection*{Format Keluaran}
 Tuliskan satu baris yang berisi total seluruh query 2, jika tidak ada query 2 maka tulis 0
 \\
@@ -95,7 +95,11 @@ Tuliskan satu baris yang berisi total seluruh query 2, jika tidak ada query 2 ma
 \end{multicols}
 
 \subsection*{Penjelasan}
- 
+query 2 1 = 0 (jarak dari 1 ke 1, karena kota 1 awalnya sudah ada supplier bahan makanan)\\
+query 2 2 = 1 (jarak 1 ke 2)\\
+query 2 3 = 1 (jarak 1 ke 3)\\
+query 1 2 = tambah supplier di kota 2\\
+query 2 3 = 2 (jarak 1 ke 2)
 
 \pagebreak
 
