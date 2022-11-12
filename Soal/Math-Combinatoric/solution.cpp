@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
-long long int mod =1e9 + 7;
-const int maxn = 2e5 + 7;
+const long long mod =1e9 + 7;
+const long long maxn = 2e5 + 7;
 
-int factorial[maxn];
-int moduloinverse[maxn];
+long long factorial[maxn];
+long long moduloinverse[maxn];
 
 
-int binary_exponentiation(int a,int b)
+long long binary_exponentiation(long long a,long long b)
 {
-    int result = 1;
+    long long result = 1;
     a %= mod;
 
     while(b > 0)
@@ -25,7 +25,7 @@ int binary_exponentiation(int a,int b)
 void precompute()
 {
     factorial[0] = 1;
-    for(int i = 1;i < maxn;i++)
+    for(long long i = 1;i < maxn;i++)
     {
         factorial[i] = (i*factorial[i-1])%mod;
 
@@ -34,24 +34,24 @@ void precompute()
 }
 
 
-int main()
+int32_t main()
 {
     precompute();
 
-    int q;
+    int q;cin>>q;
 
     while(q--)
     {
-        int n,t;
+        long long n,t;
         cin >> n >> t;
 
-        int ans = factorial[n];
+        long long ans = factorial[n];
 
         for(int i = 0;i < t;i++)
         {
-            int temp;
+            long long temp;
             cin >> temp;
-            ans = (ans * moduloinverse[n-temp])%mod;
+            ans = (ans * moduloinverse[temp])%mod;
         }
         cout << ans << "\n";
     }
