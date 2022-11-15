@@ -1,0 +1,112 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx, eso-pic}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\hypersetup{ colorlinks=true, linkcolor=black, filecolor=magenta, urlcolor=cyan}
+\geometry{ a4paper, total={170mm,257mm}, top=10mm, right=20mm, bottom=20mm, left=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.3em}
+\renewcommand{\headrulewidth}{0pt}
+
+\rfoot{\thepage}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\lfoot{\textbf{CnC Intern Contest}}
+\pagenumbering{gobble}
+
+\fancyfoot[CE,CO]{\thepage}
+\lstset{
+    basicstyle=\ttfamily\small,
+    columns=fixed,
+    extendedchars=true,
+    breaklines=true,
+    tabsize=2,
+    prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=none,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    prebreak={},
+    keywordstyle=\color[rgb]{0.627,0.126,0.941},
+    commentstyle=\color[rgb]{0.133,0.545,0.133},
+    stringstyle=\color[rgb]{01,0,0},
+    captionpos=t,
+    escapeinside={(\%}{\%)}
+}
+
+\begin{document}
+
+\begin{center}
+
+    
+    \section*{Golden Experience Requiem} % ganti judul soal
+
+    \begin{tabular}{ | c c | }
+        \hline
+        Batas Waktu  & 1s \\    % jangan lupa ganti time limit
+        Batas Memori & 256MB \\  % jangan lupa ganti memory limit
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsection*{Deskripsi}
+Di kota Venice, tinggal seseorang yang bernama Giorno Giovanna. Ia adalah seorang remaja. Suatu hari, ia mendapat kabar bahwa semua temannya telah diculik oleh perusahaan Uncover Corp. Tanpa basa-basi, ia pun bergegas langsung menemui CEO dari perusahaan tersebut, yaitu pak Yadu. Pak Yadu memiliki stand yang bernama Holoro. Stand pak Yadu dapat membuat lubang - lubang portal di dunia nyata dan menghisap kamu sehingga kamu masuk ke trap-nya pak Yadu. Pak Yadu yang sudah tahu bahwa Giorno akan menemui dia langsung mengeluarkan stand-nya sambil berteriak\\
+
+"WWWWWWWWWWWWWWWWWWRRRRRRRRRRRRRRRRRRRRRRYYYYYYYYYYYYYYYYYY\\
+YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY\\
+YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY\\
+YYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY!!!!!!!"\\
+
+Giorno langsung mengeluarkan standnya Golden Experience Requiem ( GER ). GER dapat mengalahkan pak Yadu dalam 1 serangan. GER sekarang memiliki level $M$. Artinya, dia dapat mengeluarkan kekuatan dengan mulai dari level $0$ sampai $( M - 1 )$. Giorno dapat mengalahkan pak Yadu dengan menggunakan keuatan pada level $N$. Apabila $N > M-1$, maka kekuatan pada level $N$ ( kita anggap $F_N$ sebagai kekuatan pada level N ) adalah
+
+\[F_N = \frac{F_{N-1}}{K_1} + \frac{F_{N-2}}{K_2} + \frac{F_{N-3}}{K_3} + ... +\frac{F_{N-M}}{K_M} \]
+
+\\
+Carilah nilai dari kekuatan pada level N tersebut!
+
+\subsection*{Format Masukan}
+
+Baris pertama terdiri dari satu bilangan bulat positif $N$ ($1 \leq N \leq 10.000.0000.000.000.000.000$), yang menyatakan level dari kekuatan yang ingin kita cari.\\
+Baris kedua berisi satu bilangan bulat positif $M$ ($1 \leq M \leq 100$), yang menyatakan banyak level kita saat ini.\\
+Baris ketiga berisi $M$ bilangan bulat positif yang menyatakan $F_0$ sampai $F_{M-1}$ ($F_i \leq 1.000.000.000$).\\
+Baris keempat berisi $M$ bilangan bulat positif yang menyatakan $K_1$ sampai $K_{M}$ ($ 1 < K_i \leq 1.000.000.000 $).\\
+
+\subsection*{Format Keluaran}
+
+Keluarkan nilai dari kekuatan pada level ke N.
+\\
+
+\begin{multicols}{2}
+\subsection*{Contoh Masukan}
+\begin{lstlisting}
+4
+3
+2 4 8
+2 4 1
+\end{lstlisting}
+\columnbreak
+\subsection*{Contoh Keluaran}
+\begin{lstlisting}
+15
+\end{lstlisting}
+\vfill
+\null
+\end{multicols}
+
+\subsection*{Penjelasan}
+\(F_3   = \frac{8}{1} + \frac{4}{4} + \frac{2}{2}\) = 10\\
+
+
+
+\(F_4   = \frac{11}{1} + \frac{8}{4} + \frac{4}{2}\) = 15
+
+\pagebreak
+
+\end{document}
