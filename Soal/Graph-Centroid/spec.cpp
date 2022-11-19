@@ -104,18 +104,18 @@ protected:
     }
 
     void TestCases(){
-        for(int i = 0; i < 5; i++) CASE(N = 100, M = 200, randomTC(N, M, 2, edges, queries));
-        for(int i = 0; i < 5; i++) CASE(N = 1000, M = 2000, randomTC(N, M, 100, edges, queries));
-        for(int i = 0; i < 5; i++) CASE(N = 1000, M = 2000, randomTC(N, M, 3, edges, queries));
-        for(int i = 0; i < 5; i++) CASE(N = 1e5, M = 1e5, randomTC(N, M, 4, edges, queries));
+        for(int i = 0; i < 5; i++) CASE(N = 100, M = 200, randomTC(N, M, 2, queries), randomTree(N, edges));
+        for(int i = 0; i < 5; i++) CASE(N = 1000, M = 2000, randomTC(N, M, 100, queries), randomTree(N, edges));
+        for(int i = 0; i < 5; i++) CASE(N = 1000, M = 2000, randomTC(N, M, 3, queries), randomTree(N, edges));
+        for(int i = 0; i < 3; i++) CASE(N = 1e5, M = 1e5, randomTC(N, M, 4, queries), randomTree(N, edges));
+        for(int i = 0; i < 3; i++) CASE(N = 1e5, M = 1e5, randomTC(N, M, 4, queries), spreadTree(N, edges));
+        for(int i = 0; i < 3; i++) CASE(N = 1e5, M = 1e5, randomTC(N, M, 4, queries), deepTree(N, edges));
     }
 
 private:
     void randomTC(int N, int M, int P,
-                  vector<vector<int>> &edges, 
                   vector<vector<int>> &queries) 
     {
-        randomTree(N, edges);
         vector<int> queryQueue(N-1);
         for(int i = 0; i < queryQueue.size(); i++) {
             queryQueue[i] = i + 2;
@@ -140,6 +140,23 @@ private:
     void randomTree(int N, vector<vector<int>> &edges) {
         for(int i = 2; i <= N; i++) {
             vector<int> pb = {i, rnd.nextInt(1, i-1)};
+            edges.emplace_back(pb);
+        }
+    }
+
+    void deepTree(int N, vector<vector<int>> &edges) {
+        for(int i = 2; i <= N; i++) {
+            int p = min(i-1, rnd.nextInt(1, 10 * i));
+            vector<int> pb = {i, p};
+            edges.emplace_back(pb);
+        }
+    }
+
+    void spreadTree(int N, vector<vector<int>> &edges) {
+        int spreadEdge = rnd.nextInt(1, rnd.nextInt(N / 4 + 1));
+        for(int i = 2; i <= N; i++) {
+            int p = min(i-1, max(spreadEdge, rnd.nextInt(-i, i - 1)));
+            vector<int> pb = {i, p};
             edges.emplace_back(pb);
         }
     }
