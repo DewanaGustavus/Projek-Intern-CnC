@@ -63,8 +63,10 @@ Akan tetapi, untuk K hari kedepan akan terdapat perbaikan jalan diantara kota A 
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari 4 bilangan bulat positif $N$, $M$, $a$, dan $b$ yang masing masing menyatakan banyak kota, banyak jalan, nomor kota Ida, dan Nomor kota Inar.
+Baris pertama terdiri dari 4 bilangan bulat positif $N$, $M$, $a$, dan $b$ yang masing masing menyatakan banyak kota, banyak jalan, nomor kota Ida, dan Nomor kota Inar.\\
 $M$ baris berikutnya berisi $U$, $V$, dan $W$ yang menyatakan bahwa ada jalan yang menghubungkan kota $U$ dan kota $V$ dengan panjang jalan $W$.\\
+Baris selanjutnya terdiri dari 1 bilangan positif $Q$ yang menyatakan banyak query.\\
+$Q$ baris selanjutnya terdiri dari 1 bilangan bulat positif $E$ dan $F$ yang menyatakan bahwa jalan antara kota $E$ dan kota $F$ pada hari tersebut rusak.\\ 
 Hanya terdapat 1 jalan di antara 2 kota.
 Perbaikan jalan pada 1 hari akan selesai sebelum hari selanjutnya. Artinya, perbaikan jalan hari ini akan bagus pada hari selanjutnya.
 
@@ -112,7 +114,7 @@ Keluarkan K baris yang berisi jarak tercepat antara kota Ida dan kota Inar. Kelu
  \includegraphics[scale=1.0]{graph_shortest.png}
 
 \end{center}
-Kita tahu bahwa kota Ida bernomor 5 dan kota Inar bernomor 5.\\
+Kita tahu bahwa kota Ida bernomor 1 dan kota Inar bernomor 5.\\
 Pada hari pertama, tidak ada jalan antara kota Ida dan Inar. Sehingga outpunya -1\\
 Pada hari kedua, jalan yang paling cepat adalah melewati kota $1 \rightarrow 2 \rightarrow 5$ sehingga jarak yang ditempuh adalah 101.\\ 
 Pada hari ketiga, jalan yang paling cepat adalah melewati kota $1 \rightarrow 2 \rightarrow 3 \rightarrow 4 \rightarrow 5$ sehingga jarak yang ditempuh adalah 10.
