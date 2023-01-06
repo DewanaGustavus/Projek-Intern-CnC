@@ -69,18 +69,18 @@ Giorno langsung mengeluarkan standnya Golden Experience Requiem ( GER ). GER dap
 \[F_N = \frac{F_{N-1}}{K_1} + \frac{F_{N-2}}{K_2} + \frac{F_{N-3}}{K_3} + ... +\frac{F_{N-M}}{K_M} \]
 
 \\
-Carilah nilai dari kekuatan pada level N tersebut!
+Carilah nilai dari kekuatan pada level N tersebut!. Karena sulit, maka nilai kekuatan itu harus di modulo $10^9 + 7$
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri dari satu bilangan bulat positif $N$ ($1 \leq N \leq 10^{19}$), yang menyatakan level dari kekuatan yang ingin kita cari.\\
+Baris pertama terdiri dari satu bilangan bulat positif $N$ ($1 \leq N \leq 10.000.000.000.000.000.000$), yang menyatakan level dari kekuatan yang ingin kita cari.\\
 Baris kedua berisi satu bilangan bulat positif $M$ ($1 \leq M \leq 100$), yang menyatakan banyak level kita saat ini.\\
-Baris ketiga berisi $M$ bilangan bulat positif yang menyatakan $F_0$ sampai $F_{M-1}$ ($F_i \leq 1.000.000.000$).\\
+Baris ketiga berisi $M$ bilangan bulat positif yang menyatakan $F_1$ sampai $F_{M}$ ($F_i \leq 1.000.000.000$).\\
 Baris keempat berisi $M$ bilangan bulat positif yang menyatakan $K_1$ sampai $K_{M}$ ($ 1 < K_i \leq 1.000.000.000 $).\\
 
 \subsection*{Format Keluaran}
 
-Keluarkan nilai dari kekuatan pada level ke N.
+Keluarkan nilai dari kekuatan pada level ke N di modulo $10^9 + 7$
 \\
 
 \begin{multicols}{2}
@@ -88,24 +88,21 @@ Keluarkan nilai dari kekuatan pada level ke N.
 \begin{lstlisting}
 4
 3
-2 4 8
-2 4 1
+8 4 4
+2 2 1
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
-15
+12
 \end{lstlisting}
 \vfill
 \null
 \end{multicols}
 
 \subsection*{Penjelasan}
-\(F_3   = \frac{8}{1} + \frac{4}{4} + \frac{2}{2}\) = 10\\
+\(F_4   = \frac{4}{2} + \frac{4}{2} + \frac{8}{1}\) = 10\\
 
-
-
-\(F_4   = \frac{11}{1} + \frac{8}{4} + \frac{4}{2}\) = 15
 
 \pagebreak
 
