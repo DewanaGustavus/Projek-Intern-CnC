@@ -123,13 +123,13 @@ private:
     void make_linear(vector<ll>& A, vector<ll>& B, vector<ll>& C, vector<ll>& D, vector<ll>& FN){
         ll a = 0;
         ll b = 0;
-        ll c = rnd.nextInt(1,NMAX);
-        ll d = rnd.nextInt(0,NMAX);
+        ll c = rnd.nextLongLong(1,NMAX);
+        ll d = rnd.nextLongLong(0,NMAX);
 
         long long n;
         long long fn;
         do{
-            n = rnd.nextInt(0, linMAX);
+            n = rnd.nextLongLong(0, linMAX);
             fn = func(a,b,c,d,n);
         }while(fn > FMAX);
         A.push_back(a);
@@ -141,14 +141,14 @@ private:
 
     void make_quadratic(vector<ll>& A, vector<ll>& B, vector<ll>& C, vector<ll>& D, vector<ll>& FN){
         ll a = 0;
-        ll b = rnd.nextInt(1,NMAX);
-        ll c = rnd.nextInt(0,NMAX);
-        ll d = rnd.nextInt(0,NMAX);
+        ll b = rnd.nextLongLong(1,NMAX);
+        ll c = rnd.nextLongLong(0,NMAX);
+        ll d = rnd.nextLongLong(0,NMAX);
 
         long long n;
         long long fn;
         do{
-            n = rnd.nextInt(0, quadMAX);
+            n = rnd.nextLongLong(0, quadMAX);
             fn = func(a,b,c,d,n);
         }while(fn > FMAX);
         A.push_back(a);
@@ -159,15 +159,15 @@ private:
     }
 
     void make_cubic(vector<ll>& A, vector<ll>& B, vector<ll>& C, vector<ll>& D, vector<ll>& FN){
-        ll a = rnd.nextInt(1,NMAX);
-        ll b = rnd.nextInt(0,NMAX);
-        ll c = rnd.nextInt(0,NMAX);
-        ll d = rnd.nextInt(0,NMAX);
+        ll a = rnd.nextLongLong(1,NMAX);
+        ll b = rnd.nextLongLong(0,NMAX);
+        ll c = rnd.nextLongLong(0,NMAX);
+        ll d = rnd.nextLongLong(0,NMAX);
 
         long long n;
         long long fn;
         do{
-            n = rnd.nextInt(0, cubMAX);
+            n = rnd.nextLongLong(0, cubMAX);
             fn = func(a,b,c,d,n);
         }while(fn > FMAX);
         A.push_back(a);
@@ -197,7 +197,7 @@ private:
 
     void make_random_query(ll Q, vector<ll>& A, vector<ll>& B, vector<ll>& C, vector<ll>& D, vector<ll>& FN){
         for(ll i=0;i<Q;i++){
-            ll r = rnd.nextInt(1,3);
+            ll r = rnd.nextLongLong(1,3);
             if(r == 1)make_linear(A,B,C,D,FN);
             if(r == 2)make_quadratic(A,B,C,D,FN);
             if(r == 3)make_cubic(A,B,C,D,FN);
@@ -212,8 +212,8 @@ private:
         a=0;b=0;c=1;
         ll linmax1 = 1e13, linmax2 = 5e14;
         for(int i=0;i<Qq;i++){
-            d = rnd.nextInt(0,NMAX);
-            n = rnd.nextInt(linmax1, linmax2);
+            d = rnd.nextLongLong(0,NMAX);
+            n = rnd.nextLongLong(linmax1, linmax2);
             fn = func(a,b,c,d,n);
             A.push_back(a);
             B.push_back(b);
@@ -226,8 +226,8 @@ private:
         a=0;b=1;c=0;
         ll quadmax1 = 1e5, quadmax2 = 3e6;
         for(int i=0;i<Qq;i++){
-            d = rnd.nextInt(0,NMAX);
-            n = rnd.nextInt(quadmax1, quadmax2);
+            d = rnd.nextLongLong(0,NMAX);
+            n = rnd.nextLongLong(quadmax1, quadmax2);
             fn = func(a,b,c,d,n);
             A.push_back(a);
             B.push_back(b);
@@ -240,8 +240,8 @@ private:
         a=1;b=0;c=0;
         ll cubmax1 = 3e3, cubmax2 = 1e4;
         for(int i=0;i<Qq;i++){
-            d = rnd.nextInt(0,NMAX);
-            n = rnd.nextInt(cubmax1, cubmax2);
+            d = rnd.nextLongLong(0,NMAX);
+            n = rnd.nextLongLong(cubmax1, cubmax2);
             fn = func(a,b,c,d,n);
             A.push_back(a);
             B.push_back(b);
