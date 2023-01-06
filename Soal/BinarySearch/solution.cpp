@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+#define int long long 
+
 long long func(int a, int b, int c, int d, long long x){ // f(x)
     long long ret = a*x*x*x;
     ret += b*x*x;
@@ -9,12 +11,12 @@ long long func(int a, int b, int c, int d, long long x){ // f(x)
     return ret;
 }
 
-int main(){
+int32_t main(){
     int q;
     cin>>q;
-    int linMAX = 1e9;
-    int quadMAX = 1e5;
-    int cubMAX = 1e3;
+    int linMAX = 2e15;
+    int quadMAX = 5e7;
+    int cubMAX = 2e5;
 
     while(q--){
         int a,b,c,d,fn;
