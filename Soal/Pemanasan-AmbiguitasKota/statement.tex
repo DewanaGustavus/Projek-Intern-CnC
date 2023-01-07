@@ -57,16 +57,16 @@
 \end{center}
 
 \subsection*{Deskripsi}
-Terdapat sebuah negara dengan $N$ buah kota dan $M$ buah jalan. Negara ini memiliki sebuah Ibukota. Setiap jalan menghubungkan 2 buah kota dan memiliki panjang. Sepasang kota A dan B dikatakan ambigu apabila jarak antara kota A dengan Ibukota negara tersebut sama dengan jarak antara kota B dengan Ibukota negara tersebut. Cari jumlah pasangan ambigu di negara tersebut !
+Terdapat sebuah negara dengan $N$ buah kota dan $M$ buah jalan. Negara ini memiliki sebuah Ibukota. Setiap jalan di negara ini hanya memiliki 1 arah dan juga memiliki jarak. Sepasang kota A dan B dikatakan ambigu apabila jarak antara kota A dengan Ibukota negara tersebut sama dengan jarak antara kota B dengan Ibukota negara tersebut. Cari jumlah pasangan ambigu di negara tersebut!. 
 
 \subsection*{Format Masukan}
-Baris pertama terdiri dari dua bilangan bulat positif yaitu $N$ ($1 \leq N \leq 1.000.000$) menyatakan banyaknya kota dan
-$M$ ($0 \leq M \leq 1.000.000$) yang menyatakan banyak jalan
-
-Baris kedua terdiri atas bilangan bulat positif $X$ ($1 \leq X \leq N$) yang menyatakan nomor kota yang dijadikan sebagai Ibukota
+Baris pertama terdiri dari tiga bilangan bulat positif yaitu $N$ ($1 \leq N \leq 1.000.000$) menyatakan banyaknya kota,
+$M$ ($0 \leq M \leq N\times(N-1) $) yang menyatakan banyak jalan, dan $K$ ($1 \leq K \leq N$) yang menyatakan nomor kota yang dijadikan sebagai Ibukota
 
 $M$ baris selanjutnya terdiri atas 3 bilangan bulat positif yaitu $U$ ($1 \leq U \leq N$), $V$ ($1 \leq V \leq N$), dan $W$ ($1 \leq W \leq 10^9$) yang menyatakan bahwa terdapat jalan antara kota $U$ dan kota $V$ dengan panjang jalan tersebut adalah $W$
 
+Dipastikan bahwa antara Kota $U$ ke kota $V$ akan ada hanya 1 jalan. Akan tetapi, tidak menutup kemungkinan bahwa akan ada jalan dari kota $V$ ke kota $U$.
+Dipastikan juga bahwa tidak ada jalan yang dimulai dan berakhir di kota yang sama
 \subsection*{Format Keluaran}
 Keluarkan sebuah bilangan bulat yang menyatakan jumlah pasangan kota ambigu dalam negara tersebut!
 
@@ -75,8 +75,7 @@ Keluarkan sebuah bilangan bulat yang menyatakan jumlah pasangan kota ambigu dala
 \begin{multicols}{2}
 \subsection*{Contoh Masukan}
 \begin{lstlisting}
-7 6
-4
+7 6 4
 4 5 1
 4 1 1
 5 6 2
