@@ -26,10 +26,10 @@ protected:
         NoOutput();
     }
 
-    void OutputFormat()
-    {
-        LINES(ans);
-    }
+    // void OutputFormat()
+    // {
+    //     LINES(ans);
+    // }
 
     void GradingConfig()
     {
@@ -90,6 +90,7 @@ protected:
     void TestCases()
     {
         CASE(T = 5, X = {6, 2141, 10, 1, 805306367}, N = {1, 1, 1, 2, 4}, op = {"AND", "OR", "XOR", "XOR", "XOR"});
+        CASE(T = 4, X = {1, 1000000000, 536870911, 536870912}, N = {2, 4, 6, 8}, op = {"XOR", "XOR", "XOR", "XOR"});
         for (int i = 0; i < 5; i++)
             CASE(T = 10, randomTC(T, X, N, op));
         for (int i = 0; i < 5; i++)

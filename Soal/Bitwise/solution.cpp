@@ -28,8 +28,10 @@ int main()
             int p1, p2;
             if (X == 1)
                 p1 = 2;
-            else
+            else if (X == 1e9)
                 p1 = X - 1;
+            else
+                p1 = 1;
             p2 = X ^ p1;
             cout << p1 << ' ' << p2;
             for (int i = 2; i < N; i++)
