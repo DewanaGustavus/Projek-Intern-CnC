@@ -61,30 +61,33 @@ Dengklek mempunyai suatu bilangan K, L, dan R. Dia tahu bahwa setiap bilangan bu
 
 \subsection*{Format Masukan}
 
-Baris pertama terdiri atas bilangan Q (1 \leq Q \leq 10
-Q-baris selanjutnya terdiri atas 3 buah bilangan yaitu $K$ ($1 \leq K \leq 10^9$), $L$ ($1 \leq L \leq R$), dan $R$ ($L \leq R \leq 10.000$)
+Baris pertama terdiri atas bilangan Q ($1 \leq Q \leq 10^5$) yang menyatakan berapa banyak pertanyaan yang Dengklek miliki.
+Q baris selanjutnya terdiri atas 3 buah bilangan yaitu $K$ ($1 \leq K \leq 10^9$), $L$, dan $R$ ($2 \leq L \leq R \leq 10^5$)
 
 \subsection*{Format Keluaran}
 
-Keluarkan jumlah bilangan yang mempunyai k-buah pembagi prima yang berbeda.
+Keluarkan Q baris yang menyatakan jumlah bilangan yang mempunyai k-buah pembagi prima yang berbeda pada interval [L,R].
 \\
 
 \begin{multicols}{2}
 \subsection*{Contoh Masukan}
 \begin{lstlisting}
+2
 2 6 15
+1 2 8
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
 5
+6
 \end{lstlisting}
 \vfill
 \null
 \end{multicols}
 
 \subsection*{Penjelasan}
-Berikut adalah daftar bilangan bilangan tersebut :
+Berikut adalah daftar bilangan bilangan pada testcase pertama :
 \begin{itemize}
     \item $6  = 2   \times 3$
     \item $10 = 2   \times 5$
@@ -92,6 +95,7 @@ Berikut adalah daftar bilangan bilangan tersebut :
     \item $14 = 2   \times 7$
     \item $15 = 3   \times 5$
 \end{itemize}
+pada testcase kedua bilangan yang tidak mempunyai tepat 1 pembagi prima adalah 6 yang memiliki pembagi prima 2, dan 3.
 
 \pagebreak
 

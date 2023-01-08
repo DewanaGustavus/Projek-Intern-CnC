@@ -7,8 +7,8 @@ class ProblemSpec : public BaseProblemSpec {
 protected:
     int Q;
     vector<int> K, L, R;
-    const int QMAX = 1e6;
-    const int NMAX = 1e6;
+    const int QMAX = 1e5;
+    const int NMAX = 1e5;
     const int KMAX = 1e9; 
 
     vector<int> ans;
@@ -67,10 +67,10 @@ protected:
     }
 
     void TestCases() {
-        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(1,10), random_case(Q, 2,100,K,L,R));
-        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(100,1000), random_case(Q, 100,1e4,K,L,R));
-        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(1e4,1e5), random_case(Q, 1e4,NMAX,K,L,R));
-        for(int i=0;i<3;i++)CASE(Q = QMAX, random_case(Q, 2,NMAX,K,L,R));
+        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(10,100), random_case(Q, 2,100,K,L,R));
+        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(100,1e3), random_case(Q, 100,1e4,K,L,R));
+        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(1e3,1e4), random_case(Q, 1e3,NMAX,K,L,R));
+        CASE(Q = QMAX, random_case(Q, 2,NMAX,K,L,R));
         CASE(Q = QMAX, nonsense_k(Q, K, L, R));
     }
 
