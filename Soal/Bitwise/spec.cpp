@@ -23,13 +23,12 @@ protected:
     void StyleConfig()
     {
         CustomScorer();
-        NoOutput();
     }
 
-    // void OutputFormat()
-    // {
-    //     LINES(ans);
-    // }
+    void OutputFormat()
+    {
+        LINES(ans);
+    }
 
     void GradingConfig()
     {
@@ -77,7 +76,9 @@ protected:
                "4 2 AND",
                "11 3 OR",
                "2 3 XOR"});
-        // Output({"0.4444444444"});
+        Output({"12 4",
+                "1 2 8",
+                "2 2 2"});
     }
 
     void BeforeTestCase()
