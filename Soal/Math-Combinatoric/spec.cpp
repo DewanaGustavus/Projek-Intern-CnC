@@ -44,7 +44,7 @@ private:
                 if(num <= 0)inbound = false;
                 tot += num;
             }
-            // if(tot != N)inbound = false;
+            if(tot != N)inbound = false;
         }
         return inbound;
     }
@@ -68,11 +68,13 @@ protected:
     }
 
     void TestCases(){
-        for(int i=0;i<10;i++)CASE(Q = 5, random_filling(Q, 10, quers));
-        for(int i=0;i<10;i++)CASE(Q = rnd.nextInt(1,QMAX), random_filling(Q, NMAX, quers));
-        for(int i=0;i<10;i++)CASE(Q = QMAX, random_filling(Q, rnd.nextInt(1,NMAX), quers));
-        for(int i=0;i<10;i++)CASE(Q = rnd.nextInt(1,QMAX), random_filling(Q, rnd.nextInt(1,NMAX), quers));
-        for(int i=0;i<10;i++)CASE(Q = QMAX, random_filling(Q, NMAX, quers));
+        for(int i=0;i<3;i++)CASE(Q = 5, random_filling(Q, 10, quers));
+        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(5,100), random_filling(Q, 50, quers));
+        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(100,1000), random_filling(Q, 100, quers));
+        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(1000,1e4), random_filling(Q, NMAX, quers));
+        for(int i=0;i<3;i++)CASE(Q = rnd.nextInt(1,QMAX), random_filling(Q, rnd.nextInt(1,NMAX), quers));
+        for(int i=0;i<3;i++)CASE(Q = QMAX, random_filling(Q, rnd.nextInt(1,NMAX), quers));
+        for(int i=0;i<3;i++)CASE(Q = QMAX, random_filling(Q, NMAX, quers));
     }
 
 private:
@@ -84,15 +86,16 @@ private:
             vector<int> tmp(length, 1);
             int need = total - length;
             for(int i=0;i<length;i++){
-                int add = rnd.nextInt(0, need/5);
+                int add = rnd.nextInt(0, max(0, need/5));
                 need -= add;
                 tmp[i] += add;
             }
             for(int i=0;i<length;i++){
-                int add = rnd.nextInt(0, need);
+                int add = rnd.nextInt(0, max(0, need));
                 need -= add;
                 tmp[i] += add;
             }
+            tmp[length-1] += need;
             quers.push_back(tmp);
         }
     }

@@ -38,10 +38,11 @@ protected:
     }
     
     void TestCases() {
-        for(int i=0;i<10;i++)CASE(N = rnd.nextInt(1,10));
-        for(int i=0;i<10;i++)CASE(N = rnd.nextInt(10,1e2));
-        for(int i=0;i<10;i++)CASE(N = rnd.nextInt(1e2,1e3));
-        for(int i=0;i<10;i++)CASE(N = rnd.nextInt(1e4,1e6));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1,50));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(50,200));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(200,3000));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(3000,1e5));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1e5,1e6));
         CASE(N = 9722);
         CASE(N = 37882);
         CASE(N = 103330);

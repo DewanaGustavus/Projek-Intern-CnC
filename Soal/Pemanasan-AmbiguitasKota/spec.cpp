@@ -85,12 +85,12 @@ protected:
 
     void TestCases()
     {
-        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1,100), M = rndM(N), random_graph(N,M,10,U,V,W));
-        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1,100), M = N*(N-1), random_graph(N,M,10,U,V,W));
-        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(100,1e4), M = rndM(N), random_graph(N,M,100,U,V,W));
-        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1,NMAX), M = rndM(N), random_graph(N,M,1000,U,V,W));
-        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(NMAX), M = NMAX, random_graph(N,M,WMAX,U,V,W));
-        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1e3, 1e4), M = NMAX, random_graph(N,M,50,U,V,W));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1,100), M = rndM(N), K = rnd.nextInt(1,N), random_graph(N,M,10,U,V,W));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1,100), M = N*(N-1), K = rnd.nextInt(1,N), random_graph(N,M,10,U,V,W));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(100,1e4), M = rndM(N), K = rnd.nextInt(1,N), random_graph(N,M,100,U,V,W));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1,NMAX), M = rndM(N), K = rnd.nextInt(1,N), random_graph(N,M,1000,U,V,W));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(NMAX), M = NMAX, K = rnd.nextInt(1,N), random_graph(N,M,WMAX,U,V,W));
+        for(int i=0;i<3;i++)CASE(N = rnd.nextInt(1e3, 1e4), M = NMAX, K = rnd.nextInt(1,N), random_graph(N,M,50,U,V,W));
         CASE(N = NMAX, M = 0, U.clear(), V.clear(), W.clear());   
     }
 
