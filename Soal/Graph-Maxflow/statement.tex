@@ -46,7 +46,7 @@
 \begin{center}
 
     
-    \section*{Array dan Operasi} % ganti judul soal
+    \section*{Musuh Pak Dengklek} % ganti judul soal
 
     \begin{tabular}{ | c c | }
         \hline
@@ -57,16 +57,16 @@
 \end{center}
 
 \subsection*{Deskripsi}
-Terdapat sebuah array $A$ yang berukuran $N$ dan $M$ buah pasangan baik dimana pasangan ($i,j$) dikatakan baik apabila $i_k + j_k$ adalah bilangan ganjil dan $1 \leq k \leq M$ dan $1 \leq i_k < j_k \leq N$. Dalam satu operasi, anda akan melakukan ini :
+Pak Dengklek mempunyai $N$ buah musuh dan $M$ buah pasangan kuat dimana pasangan ($i,j$) dikatakan kuat apabila $i_k + j_k$ adalah bilangan ganjil dan $1 \leq k \leq M$ dan $1 \leq i_k < j_k \leq N$. Musuh ke $i$ tersebut memiliki kekuatan $A[i]$. Pak dengklek mempunyai kekuatan khusus. Dia dapat melakukan satu sekuens operasi kepada kekuatan  musuh - musuhnya tersebut. Sekuens operasinya adalah sebagai berikut :
 \begin{enumerate}
-    \item Ambil 1 pasangan baik ($i_k, j_k$) dan 1 bilangan bulat positif lainnya ($V > 1$), dimana $V$ habis membagi $A[i_k]$ dan $A[j_k]$
-    \item membagi $A[i_k]$ dan $A[j_k]$ dengan $V$
+    \item Ambil 1 pasangan kuat ($i_k, j_k$) dan 1 bilangan bulat positif lainnya ($V > 1$), dimana $V$ habis kekuatan musuhnya atau habis membagi $A[i_k]$ dan $A[j_k]$
+    \item mengubah nilai $A[i_k]$ dan $A[j_k]$ menjadi  $A[i_k]/V$ dna $A[j_k]/V$
 \end{enumerate}
-Cari jumlah operasi maksimum yang bisa anda lakukan terhadap array tersebut
+Karena dendam terhadap musuhnya, Pak Dengklek ingin melakukan operasi tersebut sebanyak mungkin. Bantu pak Dengklek untuk mencari berapa banyak operasi yang bisa ia lakukan
 \subsection*{Format Masukan}
 
 Baris pertama terdiri dari dua bilangan positif $N$ ($2 \leq N \leq 100$) dan $M$ ($1 \leq M \leq 100$)\\
-Baris kedua terdiri atas $N$ buah bilangan yang menyatakan $A[1], A[2], A[3], ... ,A[n]$ ($1 \leq A[i] \leq N$)\\
+Baris kedua terdiri atas $N$ buah bilangan yang menyatakan kekuatan musuhnya atau $A[1], A[2], A[3], ... ,A[n]$ ($1 \leq A[i] \leq 10^9$)\\
 Masing - masing baris pada setiap $M$ baris selanjutnya terdiri atas pasangan baik. Setiap baris terdiri atas $i_k$ dan $j_k$ ($1 \leq k \leq M,1 \leq i_k < j_k \leq N,$ $i_k$ + $j_k$ dipastikam  merupakan bilangan ganjil) 
 
 \subsection*{Format Keluaran}
