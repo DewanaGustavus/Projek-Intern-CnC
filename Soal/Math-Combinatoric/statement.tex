@@ -60,7 +60,7 @@
 
 Ada \textit{N} buah baju yang akan dibagikan kepada \textit{T} buah tim. Masing-masing tim memiliki $K_i$ orang anggota. Banyak anggota setiap tim tidak selalu sama dan $K_1 + K_2 + ... + K_T = N$.
 
-Buatlah sebuah program yang dapat menghitung banyak kemungkinan susunan pembagian baju yang bisa kita dapatkan apabila kita membaginya kepada t buah tim tersebut di mod 1e9 + 7
+Buatlah sebuah program yang dapat menghitung banyak kemungkinan susunan pembagian baju yang bisa kita dapatkan apabila kita membaginya kepada T buah tim tersebut di mod 1e9 + 7
 
 \subsection*{Format Masukan}
 
@@ -76,19 +76,36 @@ Untuk tiap kasus uji, tuliskan sebuah bilangan, dengan bilangan baris ke-$i$ men
 \begin{multicols}{2}
 \subsection*{Contoh Masukan}
 \begin{lstlisting}
-1
+2
+4 2
+2 2
 5 3
 3 1 1
 \end{lstlisting}
 \columnbreak
 \subsection*{Contoh Keluaran}
 \begin{lstlisting}
+6
 20
 \end{lstlisting}
 \vfill
 \null
 \end{multicols}
 
+\subsection*{Penjelasan}
+pada contoh pertama terdapat 4 baju dan 2 bauh tim dengan masing-masing tim memiliki 2 orang anggota.
+seluruh kemungkinan pembagian baju adalah:
+\begin{enumerate}
+    \item $(1,2)$, $(3,4)$
+    \item $(1,3)$, $(2,4)$
+    \item $(1,4)$, $(2,3)$
+    \item $(2,3)$, $(1,4)$
+    \item $(2,4)$, $(1,3)$
+    \item $(3,4)$, $(1,2)$
+\end{enumerate}
+
+
 \pagebreak
+
 
 \end{document}

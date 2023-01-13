@@ -57,16 +57,18 @@
 \end{center}
 
 \subsection*{Deskripsi}
-Terdapat kartu sebanyak 9$K$ ($2 \leq t_i \leq 10^5$), untuk setiap $i$ = 1,2,..,9 terdapat K buah kartu yang tertulis $i$. Kita kemudian mengacak kartu tersebut dan memberikan 5 kartu kepada masing-masing Takahashi dan Aoki, 1 kartu dalam kondisi terbalik dan 4 sisanya tidak. Carilah kemungkinan dimana Takahashi menang, Takahashi menang jika kartu yang dia pegang bernilai lebih besar daripada kartu yang dipegang Aoki.
+Terdapat kartu sebanyak 9$K$, untuk setiap $i$ = 1,2,..,9 terdapat K buah kartu yang tertulis $i$. Kita kemudian mengacak kartu tersebut dan memberikan 5 kartu kepada masing-masing Takahashi dan Aoki, 1 kartu dalam kondisi terbalik dan 4 sisanya tidak. Carilah kemungkinan dimana Takahashi menang, Takahashi menang jika kartu yang dia pegang bernilai lebih besar daripada kartu yang dipegang Aoki.
 \\
 \\
 Kita dapat mendefinisikan nilai dari 5 kartu yang dipegang dengan:
 $\displaystyle\sum_{i=1}^9i10^{c_i}$, dimana $c_i$ adalah jumlah kartu yang memiliki tulisan i.
 \subsection*{Format Masukan}
-Input berupa integer K dan sepasang string. K melambangkan jumlah kartu yang tertulis $i$. String S melambangkan kartu Takahashi dan string T melambangkan kartu Aoki. S dan T masing-masing adalah string yang terdiri dari 5 karakter. Karakter terakhir stringnya dilambangkan dengan '#' yang melambangkan kartu yang terbalik.
+Input berupa integer K ($2 \leq K \leq 10^5$) dan sepasang string. K melambangkan jumlah kartu yang tertulis $i$. String S melambangkan kartu Takahashi dan string T melambangkan kartu Aoki. S dan T masing-masing adalah string yang terdiri dari 5 karakter. Karakter terakhir stringnya dilambangkan dengan '#' yang melambangkan kartu yang terbalik.
 
 \subsection*{Format Keluaran}
 Tuliskan kemungkinan dimana Takahashi menang.
+
+Jawaban akan terhitung benar jika jawaban tepat atau relatif errornya paling besar adalah $10^{-5}$
 \\
 
 \begin{multicols}{2}
@@ -86,7 +88,15 @@ Tuliskan kemungkinan dimana Takahashi menang.
 \end{multicols}
 
 \subsection*{Penjelasan}
-Jawaban akan terhitung benar jika jawaban tepat atau relatif errornya paling besar adalah $10^-5$
+Contoh kemungkinan dimana Takahashi menang
+
+Kartu Takahashi : 11441
+
+Kartu Aoki : 22331
+
+Nilai Takahashi : $1\cdot 10^3 + 4\cdot10^2 = 1400 $ 
+
+Nilai Aoki : $1\cdot10^1 + 2\cdot10^2 + 3\cdot10^2 = 510$
 
 \pagebreak
 
