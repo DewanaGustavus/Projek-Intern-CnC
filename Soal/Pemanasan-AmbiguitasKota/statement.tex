@@ -57,7 +57,7 @@
 \end{center}
 
 \subsection*{Deskripsi}
-Terdapat sebuah negara dengan $N$ buah kota dan $M$ buah jalan. Negara ini memiliki sebuah Ibukota. Setiap jalan di negara ini hanya memiliki 1 arah dan juga memiliki jarak. Sepasang kota A dan B dikatakan ambigu apabila jarak antara kota A dengan Ibukota negara tersebut sama dengan jarak antara kota B dengan Ibukota negara tersebut. Cari jumlah pasangan ambigu di negara tersebut!. 
+Terdapat sebuah negara dengan $N$ buah kota dan $M$ buah jalan. Negara ini memiliki sebuah Ibukota. Setiap jalan di negara ini hanya memiliki 1 arah dan juga memiliki jarak. Sepasang kota A dan B dikatakan ambigu apabila jarak terpendek antara kota A dengan Ibukota negara tersebut sama dengan jarak terpendek antara kota B dengan Ibukota negara tersebut. Cari jumlah pasangan ambigu di negara tersebut!. 
 
 \subsection*{Format Masukan}
 Baris pertama terdiri dari tiga bilangan bulat positif yaitu $N$ ($1 \leq N \leq 2\times10^5$) menyatakan banyaknya kota,
@@ -99,6 +99,20 @@ Keluarkan sebuah bilangan bulat yang menyatakan jumlah pasangan kota ambigu dala
 \begin{center}
     \includegraphics{graph.png}
 \end{center}
+jarak terpendek dari seluruh kota ke ibukota:
+
+Kota 1 : 1 $(1 \rightarrow 4)$
+
+Kota 2 : 3 $(2 \rightarrow 1 \rightarrow 4)$
+
+Kota 3 : tidak ada jalan ke ibukota
+
+Kota 4 : 0 (Kota 4 adalah ibukota)
+
+Kota 5 : 1 $(5 \rightarrow 4)$
+
+Kota 6 : 3 $(6 \rightarrow 5 \rightarrow 4)$
+
 Pasangan ambigu adalah pasangan kota 5 dan kota 1 dan pasangan kota 6 dan kota 2
 
 

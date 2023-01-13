@@ -64,7 +64,7 @@ int QUERY;
 // Constant
 const int MOD = 1e9+7;
 const long long INF = 1e18;
-const int maxn = 1e6;
+const int maxn = 1e5 + 5;
 
 int primecnt[maxn + 1] = {};
 vector<int> primeset[8];
@@ -72,7 +72,7 @@ vector<int> primeset[8];
 int32_t main(){
     fastIO
 
-    for(int p=2;p*p<=maxn;p++)
+    for(int p=2;p<=maxn;p++)
         if(primecnt[p] == 0)
             for(int i=p;i<=maxn;i+=p) // O(log(n)) harmonic series
                 primecnt[i]++;
